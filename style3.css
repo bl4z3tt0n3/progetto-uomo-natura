@@ -53,18 +53,18 @@ body {
     border: 1px solid var(--glass-border);
     width: max-content;
     max-width: 90%;
-
 }
 
 .glass-menu nav {
     display: flex;
     gap: 1.5rem;
+    justify-content: center;
 }
 
 .glass-menu a {
     text-decoration: none;
     color: var(--primary);
-    font-weight: 700;
+    font-weight: 500;
     font-size: 0.95rem;
     transition: opacity 0.2s ease;
 }
