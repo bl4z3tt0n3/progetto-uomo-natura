@@ -127,11 +127,24 @@ a {
 }
 
 /* ========== HERO SECTION ========== */
+/* Immagine hero Home (file locale) */
+#home.card1 { --hero-bg: url("sez0_1.png"); }
+
 .card1 {
     /* Occupa quasi tutto lo schermo meno un margine sopra */
     min-height: 90vh; 
     width: 95%;
-    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    /*
+      HERO BACKGROUND
+      - Usa --hero-bg per l’immagine (es: url('sez0_1.png'))
+      - Se manca, resta il gradiente di fallback
+    */
+    background:
+        linear-gradient(135deg, rgba(75, 105, 49, 0.55), rgba(46, 67, 95, 0.55)),
+        var(--hero-bg, linear-gradient(135deg, var(--secondary), var(--primary)));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--white);
     border-radius: calc(0.5 * var(--m));
     display: flex;
@@ -172,7 +185,7 @@ a {
 
 /* Immagini laterali */
 .side-image {
-    flex: 1; /* Prende metà spazio */
+    flex: 1; /* Prende metÃ  spazio */
     height: 500px; /* Altezza fissa */
     width: 100%;
     background-size: cover;
@@ -191,13 +204,13 @@ a {
 }
 
 /* Immagini specifiche */
-/* QUI C'È LA TUA MODIFICA PER L'IMMAGINE LOCALE */
+/* QUI C'Ã LA TUA MODIFICA PER L'IMMAGINE LOCALE */
 .img-intro { background-image: url("https://miro.medium.com/v2/resize:fit:1200/1*mYuOznBZHvaUQD6P-nKgDg.jpeg"); }
 .img-outro { background-image: url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1400&q=80"); }
 
 /* Testi affiancati */
 .side-text {
-    flex: 1; /* Prende metà spazio */
+    flex: 1; /* Prende metÃ  spazio */
     padding: 2.5rem;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
@@ -247,7 +260,7 @@ a {
     overflow: hidden;
     padding: 1rem;
     width: 100%;
-    min-height: 400px; /* Un po' più alte */
+    min-height: 400px; /* Un po' piÃ¹ alte */
     text-align: center;
     color: var(--white);
     background-color: #000;
