@@ -88,19 +88,18 @@ a {
 .glass-menu nav {
     display: flex;
     gap: 1.5rem;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
 .glass-menu a {
+    text-decoration: none;
     color: var(--primary);
     font-weight: 500;
     font-size: 0.95rem;
+    transition: opacity 0.2s ease;
 }
 
-.glass-menu a:hover {
-    opacity: 0.6;
-}
+.glass-menu a:hover { opacity: 0.6; }
 
 /* ========== STRUTTURA PRINCIPALE ========== */
 main {
