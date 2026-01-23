@@ -23,7 +23,7 @@ html {
 body {
     background-color: #ffffff;
     color: var(--text-color);
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
@@ -40,31 +40,48 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    padding: 0.8rem 1.6rem;
-    background: var(--glass-bg);
+    
+    /* Padding e Font precisi */
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+
+    /* Effetto Glassmorphism */
+    background: rgba(255, 255, 255, 0.46);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.86);
+
+    /* Sfocatura */
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
-    border: 1px solid var(--glass-border);
-    width: max-content;
-    max-width: 90%;
+
+    /* Ombra morbida */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Previene che il menu si allarghi troppo su schermi piccoli */
+    width: auto;
+    white-space: nowrap;
 }
 
 .glass-menu nav {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.5rem; /* Spaziatura tra i link ridotta come nel secondo esempio */
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .glass-menu a {
-    text-decoration: none;
-    color: var(--primary);
+    color: var(--primary); /* Assicurati che --primary sia #2E435F */
     font-weight: 500;
     font-size: 0.95rem;
+    text-decoration: none;
     transition: opacity 0.2s ease;
 }
 
-.glass-menu a:hover { opacity: 0.6; }
+.glass-menu a:hover {
+    opacity: 0.6; /* Effetto hover più delicato del secondo esempio */
+    color: var(--primary); /* Evita il cambio colore brusco */
+}
 
 /* =========================
    LAYOUT PRINCIPALE

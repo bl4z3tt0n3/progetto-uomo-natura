@@ -53,6 +53,7 @@ body {
     border: 1px solid var(--glass-border);
     width: max-content;
     max-width: 90%;
+
 }
 
 .glass-menu nav {
@@ -63,7 +64,7 @@ body {
 .glass-menu a {
     text-decoration: none;
     color: var(--primary);
-    font-weight: 500;
+    font-weight: 700;
     font-size: 0.95rem;
     transition: opacity 0.2s ease;
 }
