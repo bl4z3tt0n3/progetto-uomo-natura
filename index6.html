@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!-- ... altri meta tag ... -->
+    <!-- LINK AL FONT E CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Assicurati di collegare il CSS aggiornato qui sopra -->
+     <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+
+    <!-- NUOVA TOPBAR AGGIUNTA -->
+    <header class="glass-menu">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index1.html">Sezione 1</a>
+            <a href="index2.html">Sezione 2</a>
+            <a href="index3.html">Sezione 3</a>
+            <a href="index5.html">Sezione 4</a>
+            <a href="index6.html">Quiz</a>
+            <a href="index4.html">Fonti</a>
+        </nav>
+    </header>
+
+    <!-- Contenitore Principale del Quiz -->
+<div class="container">
+    <div class="header">
+        <h1>Quiz Finale</h1>
+        <p>Mettiti alla prova su Uomo e Natura</p>
+    </div>
+
+    <!-- Barra di Progresso -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- QUI VENGONO INSERITE LE DOMANDE DINAMICAMENTE -->
+    <div id="quiz-content"></div>
+
+    <!-- SEZIONE RISULTATI (Nascosta all'inizio) -->
+    <div id="results" class="results-container">
+        <div class="score-circle">
+            <span id="score-display">0/0</span>
+        </div>
+        <div class="results-text" id="result-message"></div>
+        <div class="results-details" id="result-details"></div>
+        
+        <div id="answer-review" class="answer-review"></div>
+        
+        <div class="button-group">
+            <button class="btn-restart" onclick="restartQuiz()">Ricomincia Quiz</button>
+            <button class="btn-next" onclick="window.location.href='index.html'">Torna alla Home</button>
+        </div>
+    </div>
+</div>
+
+
+    <!-- SCRIPT JS -->
+    <script src="script.js"></script>
+</body>
+</html>

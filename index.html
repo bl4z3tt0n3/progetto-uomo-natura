@@ -1,82 +1,106 @@
 <!DOCTYPE html>
-<html>
-
-<!-- COLLEGAMENTO FILE JAVASCRIPT -->
-<script src="script.js"></script>
-
+<html lang="it">
 <head>
-    <!-- CODICE PER ACCENTI-->
     <meta charset="UTF-8">
-
-    <!-- NOME DELLA BARRETTA -->
-    <title> INTITOLAZIONE </title>
-
-    <!-- LINK AL FILE CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- IMPORTAZIONE DEL FONT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapporto Uomo e Natura</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<header class="glass-menu">
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Progetto</a>
-    <a href="#">Ambiente</a>
-    <a href="#">Ricerca</a>
-    <a href="#">Team</a>
-    <a href="#">Contatti</a>
-  </nav>
-</header>
-
-
 <body>
+    <!-- Header Menu -->
+    <header class="glass-menu">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index1.html">Sezione 1</a>
+            <a href="index2.html">Sezione 2</a>
+            <a href="index3.html">Sezione 3</a>
+            <a href="index5.html">Sezione 4</a>
+            <a href="index6.html">Quiz</a>
+            <a href="index4.html">Fonti</a>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
+    <div class="card1" id="home">
+        <h2>RAPPORTO UOMO E NATURA<br><span style="font-size: 0.6em; font-weight: 300;">Evoluzione di un legame complesso</span></h2>
+    </div>
 
+    <!-- SEZIONE 1: Immagine a Sinistra, Testo a Destra -->
+    <div class="split-container" id="intro">
+        <div class="side-image img-intro"></div>
+        <div class="side-text">
+            <h1>Introduzione</h1>
+            <p>Il rapporto tra uomo e natura è uno dei temi centrali per capire come cambiano società, culture e modi di vivere, perché influenza sia l'uso delle risorse, sia la nostra visione del mondo.</p>
+            <p>Nel corso della storia questo legame non è rimasto stabile: ha assunto forme di vicinanza e appartenenza, oppure di distacco e sfruttamento, a seconda dei contesti dettati dalle trasformazioni economiche e culturali.</p>
+        </div>
+    </div>
 
+    <!-- Main Cards Grid -->
+    <main class="page-content" id="cards">
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Legame SIMBIOTICO</h2>
+                <p class="copy">L'uomo preistorico viveva in simbiosi con piante e animali. Con l'agricoltura si separa dalla natura per sfruttarla.</p>
+                <a href="#" class="btn">Approfondisci</a>
+            </div>
+        </div>
 
+        <div class="card">
+            <div class="content">
+                <h2 class="title">LIMITI della crescita</h2>
+                <p class="copy">Da San Francesco a Galileo: l'allometria rivela che esistono limiti fisici invalicabili alla crescita e all'espansione.</p>
+                <a href="#" class="btn">Approfondisci</a>
+            </div>
+        </div>
 
-    
+        <div class="card">
+            <div class="content">
+                <h2 class="title">DISTANZA moderna</h2>
+                <p class="copy">Leopardi (sofferenza), Keats (bellezza ciclica) e Dickinson (natura indomabile) raccontano il distacco moderno.</p>
+                <a href="#" class="btn">Approfondisci</a>
+            </div>
+        </div>
 
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Nuova ECOSOFIA</h2>
+                <p class="copy">Oltre l'ecologia: serve un cambio mentale. La Land Art riconnette uomo e natura, valorizzando la biodiversità.</p>
+                <a href="#" class="btn">Approfondisci</a>
+            </div>
+        </div>
+    </main>
 
+    <!-- SEZIONE 2: Testo a Sinistra, Immagine a Destra -->
+    <div class="split-container reverse" id="conclusione">
+        <div class="side-image img-outro"></div>
+        <div class="side-text">
+            <h1>Conclusione</h1>
+            <p>In questo sito seguiamo l'evoluzione del rapporto tra uomo e natura nel corso dei millenni, mettendo in luce i passaggi decisivi che hanno ridefinito il modo in cui l'essere umano colloca se stesso rispetto all'ambiente.</p>
+            <p>Comprendere il passato è l'unico modo per costruire un futuro in cui tecnologia ed ecosistema possano coesistere.</p>
+        </div>
+    </div>
 
-<div class="card">
-  <h2>TESTO DI PROVA<br>Testo di prova</h2>
-  <button><a href="#footer">Sottotitolo</a></button>
-</div>
-    
-    
-
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="col">
+            <h3>RAPPORTO UOMO NATURA</h3>
+            <p>Un progetto didattico sull'evoluzione ecologica.</p>
+        </div>
+        <div class="col">
+            <h3>Risorse</h3>
+            <p>Bibliografia essenziale</p>
+            <p>Documenti storici</p>
+            <p>Galleria immagini</p>
+        </div>
+        <div class="col">
+            <h3>Fonti</h3>
+            <p>Studi Scientifici</p>
+            <p>Letteratura Comparata</p>
+            <p>Archivi Digitali</p>
+        </div>
+    </footer>
 </body>
-
-
 </html>
-
-
-
-
-<footer id="footer">
-  <div class="col col1">
-    <h3>TESTPROVA</h3>
-    <p>Made with <span style="color: #BA6573;">❤</span> by Fleps</p>
-    
-    <p style="color: #818181; font-size: smaller">2026 © All Rights Reserved</p>
-  </div>
-  <div class="col col2">
-    <p>Testo 1</p>
-    <p>Testo 2</p>
-    <p>Testo 3</p>
-    <p>Testo 4</p>
-  </div>
-  <div class="col col3">
-    <p>Testo 5</p>
-    <p>Testo 6</p>
-    <p>Testo 7</p>
-    <p>Testo 8</p>
-  </div>
-  <div class="backdrop"></div>
-</footer>

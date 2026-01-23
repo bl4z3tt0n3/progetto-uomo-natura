@@ -1,0 +1,217 @@
+/* =========================
+   VARIABILI & RESET
+========================= */
+:root {
+    --primary: #2E435F;
+    --text-color: #2E435F;
+    --glass-bg: rgba(255, 255, 255, 0.46);
+    --glass-border: rgba(255, 255, 255, 0.86);
+    --gap: 4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Lexend Deca", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--text-color);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   MENU
+========================= */
+.glass-menu {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 0.8rem 1.6rem;
+    background: var(--glass-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid var(--glass-border);
+    width: max-content;
+    max-width: 90%;
+}
+
+.glass-menu nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.glass-menu a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.2s ease;
+}
+
+.glass-menu a:hover { opacity: 0.6; }
+
+/* =========================
+   LAYOUT PRINCIPALE
+========================= */
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem; /* Spazio sopra per il menu */
+    display: flex;
+    flex-direction: column;
+    gap: 6rem; /* Distanza tra le sezioni */
+}
+
+/* GRIGLIA TESTO/IMMAGINE */
+.grid-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.text-content {
+    padding: 1rem;
+}
+
+.text-content h1 {
+    font-size: 3rem;
+    color: #000;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.text-content h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+    color: var(--primary);
+}
+
+/* Box Immagini Laterali */
+.image-box {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.img-1 { background-image: url("https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?auto=format&fit=crop&w=800&q=80"); }
+.img-2 { background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=800&q=80"); }
+
+/* =========================
+   SEZIONE IMMAGINE CENTRALE (75% width, 16:9)
+========================= */
+.full-image-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.big-image-container {
+    width: 75%; /* Richiesta specifica */
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    
+    /* TRUCCO ASPECT RATIO 16:9 */
+    aspect-ratio: 16 / 9;
+}
+
+.big-image {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin: 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    margin-top: auto; /* Spinge il footer in fondo se il contenuto è poco */
+    width: 100%;
+    padding: 4rem 2rem;
+    background: linear-gradient(to top, rgba(181, 199, 166, 0.3), transparent);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.col {
+    background: var(--glass-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    min-width: 250px;
+}
+
+.col h3 { color: var(--primary); margin-bottom: 0.5rem; }
+.col p { color: var(--primary); margin-bottom: 0.5rem; }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media screen and (max-width: 900px) {
+    .grid-section {
+        grid-template-columns: 1fr; /* Una colonna su mobile */
+        gap: 2rem;
+    }
+    
+    /* Su mobile invertiamo l'ordine della prima sezione per avere Titolo -> Immagine */
+    .grid-section:first-of-type .image-box {
+        order: -1; 
+    }
+
+    .big-image-container {
+        width: 100%; /* Su mobile occupa tutto */
+        aspect-ratio: 4 / 3; /* Formato più alto per mobile */
+    }
+
+    .image-box {
+        height: 300px;
+    }
+
+    footer { flex-direction: column; align-items: center; }
+    .col { width: 100%; text-align: center; }
+}

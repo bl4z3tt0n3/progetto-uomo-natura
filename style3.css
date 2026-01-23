@@ -1,0 +1,345 @@
+/* =========================
+   VARIABILI & RESET
+========================= */
+:root {
+    --m: 4rem;
+    --primary: #2E435F;
+    --text-dark: #2E435F;
+    --text-light: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.46);
+    --glass-border: rgba(255, 255, 255, 0.86);
+    
+    /* Variabili Animazione Card */
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+    --font-serif: 'Cardo', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--text-dark);
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================
+   MENU
+========================= */
+.glass-menu {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 0.8rem 1.6rem;
+    background: var(--glass-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid var(--glass-border);
+    width: max-content;
+    max-width: 90%;
+}
+
+.glass-menu nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.glass-menu a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.2s ease;
+}
+
+.glass-menu a:hover { opacity: 0.6; }
+
+/* =========================
+   HERO HEADER
+========================= */
+.hero-header {
+    margin-top: 8rem;
+    text-align: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-header h1 {
+    font-size: 3.5rem;
+    color: var(--primary);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.hero-header h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #4B6931;
+    margin-bottom: 2rem;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* =========================
+   IMMAGINE LEOPARDI (Full Width)
+========================= */
+.full-width-image {
+    width: 95%;
+    max-width: 1400px;
+    height: 60vh;
+    margin: 4rem auto;
+    border-radius: 20px;
+    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.full-width-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4); /* Scurisce l'immagine */
+    border-radius: inherit;
+}
+
+.overlay-text {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 700px;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.overlay-text h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.overlay-text p {
+    color: #f0f0f0;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   GRIGLIA CONTENUTI (Keats & Dickinson)
+========================= */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem; /* Spazio tra le sezioni */
+}
+
+.grid-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.grid-section.reverse {
+    direction: rtl; /* Trucco per invertire l'ordine visivo */
+}
+
+.grid-section.reverse > * {
+    direction: ltr; /* Ripristina la direzione del testo */
+}
+
+.text-content {
+    padding: 2rem;
+}
+
+.text-content h3 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.text-content p {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    text-align: justify;
+}
+
+/* Immagine Statica (Dickinson) */
+.static-image-box {
+    width: 100%;
+    height: 500px;
+    background-image: url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1400&q=80");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   CARD ANIMATA (Keats)
+========================= */
+.card-wrapper {
+    width: 100%;
+    height: 500px; /* Altezza fissa contenitore */
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: whitesmoke;
+    background-color: whitesmoke;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 110%;
+    width: 100%;
+    background-image: url("https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?auto=format&fit=crop&w=800&q=80");
+    background-size: cover;
+    background-position: center;
+    transition: transform calc(var(--d) * 1.5) var(--e);
+    pointer-events: none;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    transition: transform calc(var(--d) * 2) var(--e);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    transition: transform var(--d) var(--e);
+    transform: translateY(calc(100% - 4rem)); /* Nasconde parzialmente */
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--font-serif);
+}
+
+.copy {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.btn {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: white;
+    color: var(--primary);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Hover Effects Card */
+.card:hover::before { transform: translateY(-5%); }
+.card:hover .content { transform: translateY(0); }
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    margin-top: 5rem;
+    width: 100%;
+    padding: 4rem 2rem;
+    background: linear-gradient(to top, rgba(181, 199, 166, 0.3), transparent);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.col {
+    background: var(--glass-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    min-width: 250px;
+}
+
+.col h3 { color: var(--primary); margin-bottom: 0.5rem; }
+.col p { color: var(--primary); margin-bottom: 0.5rem; }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media screen and (max-width: 900px) {
+    .grid-section {
+        grid-template-columns: 1fr; /* Una colonna su mobile */
+        gap: 2rem;
+    }
+    
+    .grid-section.reverse {
+        direction: ltr; /* Niente inversione su mobile */
+    }
+
+    .hero-header h1 { font-size: 2.5rem; }
+    
+    .card-wrapper, .static-image-box {
+        height: 400px;
+    }
+    
+    footer { flex-direction: column; align-items: center; }
+}

@@ -1,0 +1,346 @@
+/* =========================
+   VARIABILI & RESET (Integrato)
+========================= */
+:root {
+    --primary: #2E435F;
+    --text-color: #2E435F;
+    --glass-bg: rgba(255, 255, 255, 0.46);
+    --glass-border: rgba(255, 255, 255, 0.86);
+    /* Colori specifici del quiz */
+    --quiz-bg-gradient-start: #0f172a;
+    --quiz-bg-gradient-end: #1e293b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lexend Deca", -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    /* Background originale del quiz */
+    background: linear-gradient(135deg, var(--quiz-bg-gradient-start) 0%, var(--quiz-bg-gradient-end) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Cambiato per gestire menu e footer */
+    align-items: center;
+    /* padding-top aumentato per far spazio al menu fisso */
+    padding: 100px 20px 20px; 
+}
+
+/* =========================
+   MENU (COPIATO DAGLI ALTRI FILE)
+========================= */
+.glass-menu {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 0.8rem 1.6rem;
+    background: var(--glass-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid var(--glass-border);
+    width: max-content;
+    max-width: 90%;
+}
+
+.glass-menu nav {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.glass-menu a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.2s ease;
+}
+
+.glass-menu a:hover { opacity: 0.6; }
+
+/* =========================
+   STILE QUIZ ORIGINALE (Mantenuto)
+========================= */
+.container {
+    background: #f1f5f9;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    width: 100%;
+    padding: 40px;
+    /* Margine extra se necessario per centrare verticalmente */
+    margin: auto 0;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #0f172a;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #38bdf8 0%, #0284c7 100%);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.question-container {
+    display: none;
+}
+
+.question-container.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-number {
+    color: #0284c7;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.question-text {
+    color: #0f172a;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.option:hover {
+    border-color: #0284c7;
+    background: #f0f9ff;
+}
+
+.option.selected {
+    border-color: #0284c7;
+    background: #e0f2fe;
+    color: #0f172a;
+    font-weight: 500;
+}
+
+.option.correct {
+    border-color: #22c55e;
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.option.incorrect {
+    border-color: #ef4444;
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.feedback {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    display: none;
+}
+
+.feedback.show {
+    display: block;
+}
+
+.feedback.correct {
+    background: #dcfce7;
+    color: #15803d;
+    border-left: 4px solid #22c55e;
+}
+
+.feedback.incorrect {
+    background: #fee2e2;
+    color: #991b1b;
+    border-left: 4px solid #ef4444;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+button {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-next {
+    background: #0284c7;
+    color: white;
+}
+
+.btn-next:hover:not(:disabled) {
+    background: #0369a1;
+}
+
+.btn-next:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.btn-restart {
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+.btn-restart:hover {
+    background: #0ea5e9;
+}
+
+.results-container {
+    display: none;
+    text-align: center;
+}
+
+.results-container.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    font-weight: bold;
+    margin: 20px auto;
+}
+
+.results-text {
+    color: #0f172a;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.results-details {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.answer-review {
+    text-align: left;
+    margin: 20px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.answer-item {
+    background: #f8fafc;
+    border-left: 4px solid #e2e8f0;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.answer-item.correct-answer {
+    border-left-color: #22c55e;
+    background: #f0fdf4;
+}
+
+.answer-item.wrong-answer {
+    border-left-color: #ef4444;
+    background: #fef2f2;
+}
+
+.answer-label {
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.answer-text {
+    color: #64748b;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 24px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .question-text {
+        font-size: 16px;
+    }
+
+    .option {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+}

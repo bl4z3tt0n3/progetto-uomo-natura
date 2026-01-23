@@ -1,0 +1,236 @@
+/* ========== RESET & VARIABILI ========== */
+:root {
+    --m: 4rem;
+    --primary: #2E435F;
+    --secondary: #4B6931;
+    --text-color: #2E435F;
+    --bg-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.46);
+    --glass-border: rgba(255, 255, 255, 0.86);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ========== TIPOGRAFIA ========== */
+h1 {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: var(--m);
+    text-align: center;
+    color: #000;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+p {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+/* ========== MENU STICKY ========== */
+.glass-menu {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 0.8rem 1.6rem;
+    background: var(--glass-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid var(--glass-border);
+    width: max-content;
+    max-width: 90%;
+}
+
+.glass-menu nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.glass-menu a {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.glass-menu a:hover {
+    opacity: 0.6;
+}
+
+/* ========== STRUTTURA PRINCIPALE ========== */
+main {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 2rem;
+    /* Aumentato a 10rem per dare aria rispetto al menu fisso, 
+       dato che non c'è più la card1 a fare da "cuscinetto" */
+    margin-top: 10rem; 
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; /* Distanza tra le sezioni */
+}
+
+/* Layout Flessibile (Immagine + Testo) */
+.row-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+.row-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-box {
+    flex: 1;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+}
+
+/* Immagini decorative */
+.image-box {
+    flex: 1;
+    height: 500px;
+    border-radius: 2rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.image-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
+    border-radius: inherit;
+}
+
+.img-nature-1 { background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80"); }
+.img-nature-2 { background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1400&q=80"); }
+
+/* Sezione Testo Largo */
+.full-width-text {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: rgba(46, 67, 95, 0.05); /* Sfondo leggero per stacco */
+    border-radius: 1.5rem;
+}
+
+.full-width-text p {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    margin-top: 6rem;
+    width: 100%;
+    position: relative;
+    padding: 4rem 2rem;
+    background: linear-gradient(to top, rgba(181, 199, 166, 0.3), transparent);
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.col {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.col2, .col3 {
+    background: var(--glass-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--glass-border);
+}
+
+.col p {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    text-align: left;
+}
+
+/* ========== RESPONSIVE ========== */
+@media screen and (max-width: 900px) {
+    :root { --m: 2.5rem; }
+    
+    /* Rimossi stili per .card1 */
+    
+    .row-container, .row-container.reverse {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .image-box {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .text-box { padding: 1rem 0; }
+    
+    .full-width-text { padding: 1.5rem; }
+    .full-width-text p { font-size: 1.1rem; text-align: justify; }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .col { width: 100%; text-align: center; }
+    .col p { text-align: center; }
+}

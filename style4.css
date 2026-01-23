@@ -1,0 +1,212 @@
+/* =========================
+   VARIABILI & RESET
+========================= */
+:root {
+    --primary: #2E435F;
+    --text-color: #2E435F;
+    --bg-color: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.46);
+    --glass-border: rgba(255, 255, 255, 0.86);
+    --muted: #6b7280;
+    --muted2: #9ca3af;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Lexend Deca", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   MENU (COERENTE)
+========================= */
+.glass-menu {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 0.8rem 1.6rem;
+    background: var(--glass-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid var(--glass-border);
+    width: max-content;
+    max-width: 90%;
+}
+
+.glass-menu nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.glass-menu a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.2s ease;
+}
+
+.glass-menu a:hover { opacity: 0.6; }
+
+/* =========================
+   LAYOUT PAGINA
+========================= */
+.wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem; /* Spazio per il menu */
+    flex: 1; /* Occupa lo spazio disponibile spingendo il footer */
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 2rem;
+}
+
+.folder-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+}
+
+/* =========================
+   GRIGLIA FONTI
+========================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 2rem;
+    padding-bottom: 4rem;
+    justify-items: center; /* Centra gli elementi nella griglia */
+}
+
+.item {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    transition: transform 0.2s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.thumb {
+    width: 120px;
+    height: 160px;
+    margin-bottom: 1rem;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effetto pagina piegata */
+.thumb::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.1), rgba(0,0,0,0));
+}
+
+/* Righe finte testo */
+.thumb::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    background: 
+        linear-gradient(#d1d5db 1px, transparent 1px) 0 0 / 100% 12px;
+    opacity: 0.5;
+}
+
+.name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.2rem;
+    line-height: 1.3;
+    max-width: 150px;
+}
+
+.date, .size {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* =========================
+   FOOTER (COERENTE)
+========================= */
+footer {
+    width: 100%;
+    padding: 4rem 2rem;
+    background: linear-gradient(to top, rgba(181, 199, 166, 0.3), transparent);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: auto;
+}
+
+.col {
+    background: var(--glass-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    min-width: 250px;
+}
+
+.col h3 { color: var(--primary); margin-bottom: 0.5rem; }
+.col p { color: var(--primary); margin-bottom: 0.5rem; }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+    .folder-title { font-size: 1.5rem; }
+    
+    .grid { 
+        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr); /* 2 colonne su mobile */
+    }
+    
+    .thumb { width: 100%; height: auto; aspect-ratio: 3/4; }
+    
+    footer { flex-direction: column; align-items: center; text-align: center; }
+}
