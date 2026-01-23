@@ -83,48 +83,32 @@ a {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    
-    /* Padding e Font precisi */
-    padding: 0.75rem 1.5rem;
-    font-size: 0.95rem;
-
-    /* Effetto Glassmorphism */
-    background: rgba(255, 255, 255, 0.46);
+    padding: 0.8rem 1.6rem;
+    background: var(--glass-bg);
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.86);
-
-    /* Sfocatura */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
-
-    /* Ombra morbida */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    
-    /* Previene che il menu si allarghi troppo su schermi piccoli */
-    width: auto;
-    white-space: nowrap;
+    border: 1px solid var(--glass-border);
+    width: max-content;
+    max-width: 90%;
 }
 
 .glass-menu nav {
     display: flex;
-    gap: 1.5rem; /* Spaziatura tra i link ridotta */
-    flex-wrap: nowrap;
+    gap: 1.5rem;
     justify-content: center;
-    align-items: center;
 }
 
 .glass-menu a {
+    text-decoration: none;
     color: var(--primary);
     font-weight: 500;
     font-size: 0.95rem;
-    text-decoration: none;
     transition: opacity 0.2s ease;
 }
 
-.glass-menu a:hover {
-    opacity: 0.6;
-    color: var(--primary);
-}
+.glass-menu a:hover { opacity: 0.6; }
 
 /* ========== HERO SECTION ========== */
 /* Immagine hero Home (file locale) */
