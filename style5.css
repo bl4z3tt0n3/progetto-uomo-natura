@@ -138,8 +138,8 @@ main {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.img-1 { background-image: url("https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?auto=format&fit=crop&w=800&q=80"); }
-.img-2 { background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=800&q=80"); }
+.img-1 { background-image: url("https://preview.redd.it/global-co2-emissions-through-time-1950-2022-v0-qu8zln4r9v5c1.jpeg?auto=webp&s=e33bd4fcf3963b5e5aef9a3bb81caf75e4a1ed39"); }
+.img-2 { background-image: url("https://www.italieonline.eu/user/blogimg/leto/sicilia/cretto-di-burri.jpg"); }
 
 /* =========================
    SEZIONE IMMAGINE CENTRALE (75% width, 16:9)
@@ -164,7 +164,7 @@ main {
 .big-image {
     width: 100%;
     height: 100%;
-    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+    background-image: url('sez4_1.jpg');
     background-size: cover;
     background-position: center;
 }

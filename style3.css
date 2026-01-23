@@ -113,7 +113,7 @@ body {
     height: 60vh;
     margin: 4rem auto;
     border-radius: 20px;
-    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80");
+    background-image: url('sez3_1.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -203,7 +203,7 @@ main {
 .static-image-box {
     width: 100%;
     height: 500px;
-    background-image: url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1400&q=80");
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Emily_Dickinson_daguerreotype_%28Restored%29.jpg/250px-Emily_Dickinson_daguerreotype_%28Restored%29.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -241,7 +241,7 @@ main {
     inset: 0;
     height: 110%;
     width: 100%;
-    background-image: url("https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?auto=format&fit=crop&w=800&q=80");
+    background-image: url("sez3_2.avif");
     background-size: cover;
     background-position: center;
     transition: transform calc(var(--d) * 1.5) var(--e);

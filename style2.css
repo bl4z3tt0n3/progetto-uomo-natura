@@ -153,8 +153,8 @@ main {
     border-radius: inherit;
 }
 
-.img-nature-1 { background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80"); }
-.img-nature-2 { background-image: url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1400&q=80"); }
+.img-nature-1 { background-image: url('sez2_2.jpeg'); }
+.img-nature-2 { background-image: url('sez2_1.jpg'); }
 
 /* Sezione Testo Largo */
 .full-width-text {
